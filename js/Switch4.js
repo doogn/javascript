@@ -49,3 +49,19 @@ function getNameOfDay() {
     }
     alert(today)
 }
+
+function howOld() {
+    //나이 입력
+    var age = prompt("나이를 입력하세요", "");
+    age = Number(age)
+    if (age < 20) {
+        alert("미성년자입니다");
+    } else if (age >= 20 && age < 40) {
+        alert("청년입니다");
+    } else if (age >= 40 && age < 60) {
+        alert("중년입니다");
+    } else {
+        alert("노년입니다");
+    }
+
+}
