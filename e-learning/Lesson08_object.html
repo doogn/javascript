@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var car = {
+            name: 'car1',
+            model: 400,
+            color: 'black',
+
+            company: {
+                start: 1997,
+                logo: 'star'
+            },
+
+            run: function () {
+                alert(this.name + 'is running');
+            }
+        };
+
+        for (var i in car) {
+            alert(i + ': \t' + car[i]);
+        }
+
+
+        // ------------------------
+
+
+        var car = {
+            name: 'car1'
+        }
+
+        var name = '홍길동';
+        var out = '';
+
+        with (car) {
+            out += '차주: \t' + window.name + '\n';
+        }
+
+        alert(out);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
