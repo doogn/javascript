@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        var text = "hello kopo";
+        var upperCase = text.toUpperCase();
+        alert(upperCase);
+
+        var arr = [1, 10, 3, 20, 5];
+        var temp = 0;
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for (var k in arr) {
+            document.write(arr[k] + ", ");
+        }
+
+        var dt;
+        dt = new Date();
+        msg = "현재 시간은 " + dt.getFullYear() + "년도 " + dt.getMonth() + "월 " + dt.getDate() + "일 "
+            + dt.getHours() + "시 " + dt.getMinutes() + "분 " + dt.getSeconds() + "초 입니다.";
+        alert(msg);
+
+        var names = ["홍길동", "이순신", "김유신"];
+
+        var generateRandom = function (min, max) {
+            var ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            return ranNum;
+        }
+        var choice = generateRandom(0, 2);
+        alert(names[choice]);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

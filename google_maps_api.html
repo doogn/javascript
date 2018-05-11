@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+        <h1>5/10 교통데이터 참여희망자 </h1>
+    <p>Click on the link below</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvgyf2EJxjyL6cYJGQd_fhd30A72V-asEKC0sTd06r-KuCFQ/viewform?usp=sf_link"> 참석자 링크 </a>
+    <div id="map"></div>
+    <script>
+ 
+    var rows = [{"cs_name":"coffeekorea_seulleng93","lng":127.0478832,"lat":37.50567504},{"cs_name":"propose","lng":126.8992204,"lat":37.47171123},{"cs_name":"singsingcoffee_toast","lng":128.9804553,"lat":35.15977418},{"cs_name":"warawara_hof","lng":127.0610261,"lat":37.49392233},{"cs_name":"test","lng":126.7157103801,"lat":37.4608126847},{"cs_name":"polytech_kangseo","lng":37.549506,"lat":126.840918},{"cs_name":"polytech_kangseo2","lng":126.840918,"lat":37.549506}];
+ 
+    function initMap() {
+ 
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: {lat: 35.5, lng: 128.0}
+      });
+      var markers = rows.map(function(location, i) {
+        return new google.maps.Marker({
+          position: {lat:location.lat, lng:location.lng},
+          label: location.cs_name
+        });
+      });
+ 
+      var markerCluster = new MarkerClusterer(map, markers,
+          {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC408916GC1HdZlKEV1h0UVbgRkKp4ZKYw
+&callback=initMap">
+    </script>
+  </body>
+</html>
+
+
